@@ -1,0 +1,14 @@
+
+n=int(input())
+z=input()
+ju=list(map(int,z.split()))
+dp=list([0] for _ in range(n+1))
+dp=(int,dp)
+
+for i in range(n):
+    if ju[i]!=0:
+        for j in range(i+1,i+1+ju[i]):
+            dp[j] = min(dp[i]+1, dp[j])
+
+dp[n-1] if dp[n-1]!= 0 else -1
+
